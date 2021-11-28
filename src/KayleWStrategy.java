@@ -9,13 +9,13 @@ public class KayleWStrategy implements SkillStrategy{
     public int action() {
 
         if (kayle.Mana < 90){
-            System.out.println("마나가 부족합니다");
+            System.out.println("System : 마나가 부족합니다");
             return 0;
 
         }
         else {
             heal = (int) (180 + kayle.AP * 0.3);
-            System.out.println("Kayle W - 천상의 축복 : " + heal);
+            System.out.println("System : Kayle W - 천상의 축복 : " + heal);
 
             if (kayle.HP + heal >= 2045) {
                 kayle.HP = 2045;

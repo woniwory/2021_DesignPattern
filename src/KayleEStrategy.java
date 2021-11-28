@@ -7,7 +7,7 @@ public class KayleEStrategy implements SkillStrategy{
     @Override
     public int action() {
         damage = (int)(150 + kayle.AD*0.3 + kayle.AP*0.5);
-        System.out.println("Kayle E - 화염주문검 : "+ damage);
+        System.out.println("System : Kayle E - 화염주문검 : "+ damage);
         System.out.println();
 
         return damage;

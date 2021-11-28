@@ -7,12 +7,12 @@ public class KayleRStrategy implements SkillStrategy{
         @Override
         public int action() {
             if (kayle.Mana < 100){
-                System.out.println("마나가 부족합니다");
+                System.out.println("System : 마나가 부족합니다");
                 return 0;
             }
             else {
                 damage = (int) (300 + kayle.AD * 1.0 + kayle.AP * 0.8);
-                System.out.println("Kayle R - 신성한 심판 : " + damage);
+                System.out.println("System : Kayle R - 신성한 심판 : " + damage);
                 System.out.println("다음 2초동안, 당신은 무적입니다 ! ");
                 System.out.println();
 

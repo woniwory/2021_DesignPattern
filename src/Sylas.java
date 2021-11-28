@@ -7,13 +7,13 @@ public class Sylas extends Champion {
 
     int Max_HP = 2480;
     int Max_Mana = 1500;
-
     String name = "Sylas";
     int Lv = 18;
     int HP = 2480;
     int Mana = 1500;
     int AD = 112;
     int AP = 112;
+    int SylasPassiveStack = 0;
 
     @Override
     public String toString(){ return ("당신의 Champion은 "+ getName()+"입니다 - Lv : "+getLv()); }
@@ -49,6 +49,8 @@ public class Sylas extends Champion {
 
     @Override
     public int getMax_Mana(){ return Max_Mana; }
+
+    public int getSylasPassiveStack() { return SylasPassiveStack; }
 
 
 
