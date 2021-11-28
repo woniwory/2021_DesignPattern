@@ -5,8 +5,9 @@ public class Sylas extends Champion {
         skillStrategy.action();
     }
 
-    int Max_Mana = 2480;
-    int Max_HP = 1500;
+    int Max_HP = 2480;
+    int Max_Mana = 1500;
+
     String name = "Sylas";
     int Lv = 18;
     int HP = 2480;

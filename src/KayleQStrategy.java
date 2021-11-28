@@ -7,12 +7,18 @@ public class KayleQStrategy implements SkillStrategy{
     }
     @Override
     public int action() {
+        if (kayle.Mana < 70){
+            System.out.println("마나가 부족합니다");
+            return 0;
 
-            damage = (int)(220 + kayle.getAD()*0.6 + kayle.getAP()*0.5);
-            System.out.println("Kayle Q - 광휘의 일격: "+ damage);
+        }
+        else {
+            damage = (int) (220 + kayle.getAD() * 0.6 + kayle.getAP() * 0.5);
+            System.out.println("Kayle Q - 광휘의 일격: " + damage);
             System.out.println();
             kayle.Mana -= 70;
             return damage;
+        }
 
     }
 

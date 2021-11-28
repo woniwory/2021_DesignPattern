@@ -14,7 +14,7 @@ public class SylasWStrategy implements SkillStrategy{
 
 
         if ( heal + sylas.getHP()  >= sylas.getMax_HP()){
-        sylas.HP = 2045;
+        sylas.HP = sylas.Max_HP;
         System.out.println("Sylas W - 국왕시해자 : "+"현재 최대 체력으로 회복되었습니다");
     }
         else {
