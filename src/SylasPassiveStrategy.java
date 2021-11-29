@@ -9,12 +9,11 @@ public class SylasPassiveStrategy  implements SkillStrategy{
     public int action() {
         if (sylas.getSylasPassiveStack() <= 0) {
             sylas.SylasPassiveStack = 0;
-            System.out.println("Sylas 기본공격: "+sylas.getAD());
             return sylas.getAD();
 
         } else if (sylas.getSylasPassiveStack() <= 3){
             damage = (int) (sylas.getAD() * 1.3 + sylas.getAP() * 0.25);
-            System.out.println("Sylas Passive - 패트리사이트 폭발: " + damage);
+            System.out.println("System : Sylas Passive - 패트리사이트 폭발: " + damage);
             System.out.println();
             sylas.SylasPassiveStack -= 1;
             return damage;
@@ -22,7 +21,7 @@ public class SylasPassiveStrategy  implements SkillStrategy{
         else{
             sylas.SylasPassiveStack = 3;
             damage = (int) (sylas.getAD() * 1.3 + sylas.getAP() * 0.25);
-            System.out.println("Sylas Passive - 패트리사이트 폭발: " + damage);
+            System.out.println("System : Sylas Passive - 패트리사이트 폭발 : " + damage);
             System.out.println();
             sylas.SylasPassiveStack -= 1;
             return damage;

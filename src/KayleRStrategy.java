@@ -11,7 +11,7 @@ public class KayleRStrategy implements SkillStrategy{
                 return 0;
             }
             else {
-                damage = (int) (300 + kayle.AD * 1.0 + kayle.AP * 0.8);
+                damage = (int) (300 + kayle.getAD() * 1.0 + kayle.getAP() * 0.8);
                 System.out.println("System : Kayle R - 신성한 심판 : " + damage);
                 System.out.println("다음 2초동안, 당신은 무적입니다 ! ");
                 System.out.println();

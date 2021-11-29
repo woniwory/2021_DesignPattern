@@ -9,6 +9,10 @@ public class ChampionFactory {
 
             case "Sylas":
                 return new Sylas();
+
+            case "Talon":
+                return new Talon();
+
         }
 
         return null;

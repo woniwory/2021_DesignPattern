@@ -14,7 +14,7 @@ public class KayleWStrategy implements SkillStrategy{
 
         }
         else {
-            heal = (int) (180 + kayle.AP * 0.3);
+            heal = (int) (180 + kayle.getAP() * 0.3);
             System.out.println("System : Kayle W - 천상의 축복 : " + heal);
 
             if (kayle.HP + heal >= 2045) {

@@ -11,26 +11,13 @@ public class SummonersRift {
     public static void  main(String args[]){
 
 
-        String ChampionType = "Sylas";
+        String ChampionType = "Kayle";
         String OpponentChampionType1 = "Kayle";
 
         ChampionFactory championFactory = new ChampionFactory();
         Champion champion = championFactory.createChampion(ChampionType);
         System.out.println(champion);
         System.out.println();
-
-
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("커맨드를 입력하세요 : ");
-//        String cmd = sc.nextLine();
-//        String[] cmdArray = cmd.split(" ");
-//
-//        ArrayList<String> TokenArray = new ArrayList<>();
-//        for(String i : cmdArray){
-//            TokenArray.add(i);
-//            // System.out.println(i);
-//        }
-
 
 
         JFrame fr = new JFrame(ChampionType);
@@ -79,6 +66,16 @@ public class SummonersRift {
             SylasRStrategy SylasR;
 
 
+            Talon talon;
+            TalonPassiveStrategy TalonPassive;
+            TalonQStrategy TalonQ;
+            TalonWStrategy TalonW;
+            TalonEStrategy TalonE;
+            TalonRStrategy TalonR;
+
+
+
+
             public key(Champion champion, String ChampionType){
                 if (ChampionType =="Kayle") {
 
@@ -97,15 +94,11 @@ public class SummonersRift {
                     this.KayleR = KayleR;
 
 
-                    System.out.println(kayle.getName()+"이 준 피해는 "+damage+"입니다");
-                    System.out.println(kayle.getName()+"의 HP는 "+kayle.getHP()+"입니다 (최대 HP : "+kayle.getMax_HP()+")");
-                    System.out.println(kayle.getName()+"의 Mana는 "+kayle.getMana()+"입니다 (최대 Mana : "+kayle.getMax_Mana()+")");
-
-
                 }
 
                 else if (ChampionType =="Sylas") {
                     Kayle DummyKayle = new Kayle();
+                    Talon DummyTalon = new Talon();
                     Sylas sylas = (Sylas) champion; // 다운캐스팅
                     SylasPassiveStrategy SylasPassive = new SylasPassiveStrategy(sylas);
                     SylasQStrategy SylasQ = new SylasQStrategy(sylas);
@@ -120,6 +113,22 @@ public class SummonersRift {
                     this.SylasW = SylasW;
                     this.SylasE = SylasE;
                     this.SylasR = SylasR;
+
+                }
+                else if (ChampionType =="Talon") {
+                    Talon talon = (Talon) champion; // 다운캐스팅
+                    TalonPassiveStrategy TalonPassive = new TalonPassiveStrategy(talon);
+                    TalonQStrategy TalonQ = new TalonQStrategy(talon);
+                    TalonWStrategy TalonW = new TalonWStrategy(talon);
+                    TalonEStrategy TalonE = new TalonEStrategy(talon);
+                    TalonRStrategy TalonR = new TalonRStrategy(talon);
+
+                    this.talon = talon;
+                    this.TalonPassive = TalonPassive;
+                    this.TalonQ = TalonQ;
+                    this.TalonW = TalonW;
+                    this.TalonE = TalonE;
+                    this.TalonR = TalonR;
 
 
 
@@ -147,7 +156,14 @@ public class SummonersRift {
                         System.out.println(sylas.getName()+"의 HP는 "+sylas.getHP()+"입니다 (최대 HP : "+sylas.getMax_HP()+")");
                         System.out.println(sylas.getName()+"의 Mana는 "+sylas.getMana()+"입니다 (최대 Mana : "+sylas.getMax_Mana()+")");
                         System.out.println();
+                    }
 
+                    else if (ChampionType =="Talon") {
+                        damage += TalonQ.action();
+                        System.out.println(talon.getName()+"이 준 피해는 "+damage+"입니다");
+                        System.out.println(talon.getName()+"의 HP는 "+talon.getHP()+"입니다 (최대 HP : "+talon.getMax_HP()+")");
+                        System.out.println(talon.getName()+"의 Mana는 "+talon.getMana()+"입니다 (최대 Mana : "+talon.getMax_Mana()+")");
+                        System.out.println();
                     }
 
 
@@ -168,6 +184,13 @@ public class SummonersRift {
                         System.out.println();
 
                     }
+                    else if (ChampionType =="Talon") {
+                        damage += TalonW.action();
+                        System.out.println(talon.getName()+"이 준 피해는 "+damage+"입니다");
+                        System.out.println(talon.getName()+"의 HP는 "+talon.getHP()+"입니다 (최대 HP : "+talon.getMax_HP()+")");
+                        System.out.println(talon.getName()+"의 Mana는 "+talon.getMana()+"입니다 (최대 Mana : "+talon.getMax_Mana()+")");
+                        System.out.println();
+                    }
                 }
                 else if (e.getKeyCode() == 69){
                     if (ChampionType =="Kayle") {
@@ -186,6 +209,13 @@ public class SummonersRift {
                         System.out.println();
 
                     }
+                    else if (ChampionType =="Talon") {
+                    damage += TalonE.action();
+                    System.out.println(talon.getName()+"이 준 피해는 "+damage+"입니다");
+                    System.out.println(talon.getName()+"의 HP는 "+talon.getHP()+"입니다 (최대 HP : "+talon.getMax_HP()+")");
+                    System.out.println(talon.getName()+"의 Mana는 "+talon.getMana()+"입니다 (최대 Mana : "+talon.getMax_Mana()+")");
+                    System.out.println();
+                }
 
 
 
@@ -207,20 +237,34 @@ public class SummonersRift {
                         System.out.println();
 
                     }
+
+                    else if (ChampionType =="Talon") {
+                        damage += TalonR.action();
+                        System.out.println(talon.getName()+"이 준 피해는 "+damage+"입니다");
+                        System.out.println(talon.getName()+"의 HP는 "+talon.getHP()+"입니다 (최대 HP : "+talon.getMax_HP()+")");
+                        System.out.println(talon.getName()+"의 Mana는 "+talon.getMana()+"입니다 (최대 Mana : "+talon.getMax_Mana()+")");
+                        System.out.println();
+                    }
                 }
                 else if (e.getKeyCode() ==65){
                     if (ChampionType =="Kayle") {
                         damage += kayle.getAD();
                         System.out.println(kayle.getName()+"이 준 피해는 "+damage+"입니다");
+                        System.out.println();
 
                     }
                     else if (ChampionType =="Sylas") {
                         damage += SylasPassive.action();
                         System.out.println(sylas.getName()+"이 준 피해는 "+damage+"입니다");
-
+                        System.out.println();
 
                     }
 
+                    else if (ChampionType =="Talon") {
+                        damage += TalonPassive.action();
+                        System.out.println(talon.getName() + "이 준 피해는 " + damage + "입니다");
+                        System.out.println();
+                    }
 
                 }
 

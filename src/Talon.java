@@ -1,14 +1,15 @@
 public class Talon extends Champion {
 
     int TalonPassiveStack = 0;
-    int Max_Mana = 1180;
-    int Max_HP = 2045;
+
+    int Max_HP = 2203;
+    int Max_Mana = 1006;
     String name = "Talon";
     int Lv = 18;
-    int HP = 2045;
-    int Mana = 1180;
-    int AD = 92;
-    int AP = 92;
+    int HP = 2203;
+    int Mana = 1006;
+    int AD = 140;
+    int AP = 0;
 
     @Override
     public String toString(){ return ("당신의 Champion은 "+ getName()+"입니다 - Lv : "+getLv()); }
