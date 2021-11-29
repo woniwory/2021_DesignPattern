@@ -1,10 +1,5 @@
 public class Sylas extends Champion {
 
-
-    public void action(SkillStrategy skillStrategy){
-        skillStrategy.action();
-    }
-
     int Max_HP = 2480;
     int Max_Mana = 1500;
     String name = "Sylas";

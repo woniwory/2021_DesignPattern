@@ -1,8 +1,9 @@
-public class Kayle extends Champion {
+public class Talon extends Champion {
 
+    int TalonPassiveStack = 0;
     int Max_Mana = 1180;
     int Max_HP = 2045;
-    String name = "Kayle";
+    String name = "Talon";
     int Lv = 18;
     int HP = 2045;
     int Mana = 1180;
@@ -36,13 +37,15 @@ public class Kayle extends Champion {
     }
 
     @Override
-     public int getAP(){ return AP; }
+    public int getAP(){ return AP; }
 
     @Override
-     public int getMax_HP(){ return Max_HP; }
+    public int getMax_HP(){ return Max_HP; }
 
     @Override
-     public int getMax_Mana(){ return Max_Mana; }
+    public int getMax_Mana(){ return Max_Mana; }
+    
+    public int getTalonPassiveStack() { return TalonPassiveStack; }
 
 
 

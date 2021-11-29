@@ -12,10 +12,12 @@ public class SummonersRift {
 
 
         String ChampionType = "Sylas";
+        String OpponentChampionType1 = "Kayle";
 
         ChampionFactory championFactory = new ChampionFactory();
         Champion champion = championFactory.createChampion(ChampionType);
         System.out.println(champion);
+        System.out.println();
 
 
 //        Scanner sc = new Scanner(System.in);
@@ -109,7 +111,7 @@ public class SummonersRift {
                     SylasQStrategy SylasQ = new SylasQStrategy(sylas);
                     SylasWStrategy SylasW = new SylasWStrategy(sylas);
                     SylasEStrategy SylasE = new SylasEStrategy(sylas);
-                    SylasRStrategy SylasR = new SylasRStrategy(sylas,DummyKayle);
+                    SylasRStrategy SylasR = new SylasRStrategy(sylas,OpponentChampionType1);
 
 
                     this.sylas = sylas;
