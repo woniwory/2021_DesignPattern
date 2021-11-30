@@ -1,4 +1,4 @@
-public class KayleWStrategy implements SkillStrategy{
+public class KayleWStrategy implements WStrategy{
     Kayle kayle;
     int heal;
 

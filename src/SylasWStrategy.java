@@ -1,4 +1,4 @@
-public class SylasWStrategy implements SkillStrategy{
+public class SylasWStrategy implements WStrategy{
     Sylas sylas;
     int damage;
     int heal;

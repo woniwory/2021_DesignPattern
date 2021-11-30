@@ -1,4 +1,4 @@
-public class TalonPassiveStrategy  implements SkillStrategy{
+public class TalonPassiveStrategy  implements PassiveStrategy{
     Talon Talon;
 
     int damage;

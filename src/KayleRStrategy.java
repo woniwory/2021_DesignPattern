@@ -1,4 +1,4 @@
-public class KayleRStrategy implements SkillStrategy{
+public class KayleRStrategy implements RStrategy{
     Kayle kayle;
     int damage;
     public KayleRStrategy(Kayle kayle){

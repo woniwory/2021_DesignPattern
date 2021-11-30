@@ -1,5 +1,14 @@
 public abstract class Champion {
 
+    PassiveStrategy PassiveStrategy;
+    QStrategy QStrategy;
+    WStrategy WStrategy;
+    EStrategy EStrategy;
+    RStrategy RStrategy;
+
+
+
+
     int Max_HP;
     int Max_Mana;
     String name;

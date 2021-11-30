@@ -1,4 +1,4 @@
-public class KaylePassiveStrategy implements SkillStrategy{
+public class KaylePassiveStrategy implements PassiveStrategy{
     Kayle kayle;
     int damage;
     public KaylePassiveStrategy(Kayle kayle){

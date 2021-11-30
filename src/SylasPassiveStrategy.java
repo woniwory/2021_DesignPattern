@@ -1,4 +1,4 @@
-public class SylasPassiveStrategy  implements SkillStrategy{
+public class SylasPassiveStrategy  implements PassiveStrategy{
     Sylas sylas;
 
     int damage;

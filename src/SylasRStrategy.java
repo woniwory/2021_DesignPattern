@@ -1,4 +1,4 @@
-public class SylasRStrategy implements SkillStrategy{
+public class SylasRStrategy implements RStrategy{
     Adapter Adapter;
     Sylas sylas;
     String ChampionType;

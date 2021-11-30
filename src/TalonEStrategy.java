@@ -1,4 +1,4 @@
-public class TalonEStrategy implements SkillStrategy{
+public class TalonEStrategy implements EStrategy{
     Talon Talon;
     int damage;
     public TalonEStrategy(Talon Talon){

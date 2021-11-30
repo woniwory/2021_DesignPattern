@@ -1,4 +1,4 @@
-public class TalonQStrategy implements SkillStrategy{
+public class TalonQStrategy implements QStrategy{
     Talon Talon;
     int damage = 0;
 

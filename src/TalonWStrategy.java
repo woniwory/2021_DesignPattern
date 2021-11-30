@@ -1,4 +1,4 @@
-public class TalonWStrategy implements SkillStrategy{
+public class TalonWStrategy implements WStrategy{
     Talon Talon;
     int damage;
     int heal;

@@ -1,4 +1,4 @@
-public class KayleQStrategy implements SkillStrategy{
+public class KayleQStrategy implements QStrategy{
     Kayle kayle;
     int damage = 0;
 

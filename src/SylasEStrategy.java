@@ -1,4 +1,4 @@
-public class SylasEStrategy implements SkillStrategy{
+public class SylasEStrategy implements EStrategy{
     Sylas sylas;
     int damage;
     int status = 0;
