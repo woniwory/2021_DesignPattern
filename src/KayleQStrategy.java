@@ -1,13 +1,10 @@
 public class KayleQStrategy implements QStrategy{
-    Kayle kayle;
+    Champion kayle;
     int damage = 0;
 
-    public KayleQStrategy(Kayle kayle){
-        this.kayle = kayle;
-    }
     @Override
-    public int action() {
-        if (kayle.Mana < 70){
+    public int action(Champion kayle) {
+        if (kayle.getMana() < 70){
             System.out.println("System : 마나가 부족합니다");
             return 0;
 
@@ -16,7 +13,6 @@ public class KayleQStrategy implements QStrategy{
             damage = (int) (220 + kayle.getAD() * 0.6 + kayle.getAP() * 0.5);
             System.out.println("System : Kayle Q - 광휘의 일격 : " + damage);
             System.out.println();
-            kayle.Mana -= 70;
             return damage;
         }
 

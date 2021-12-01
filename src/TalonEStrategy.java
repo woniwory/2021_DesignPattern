@@ -1,11 +1,9 @@
 public class TalonEStrategy implements EStrategy{
-    Talon Talon;
+
     int damage;
-    public TalonEStrategy(Talon Talon){
-        this.Talon = Talon;
-    }
+
     @Override
-    public int action() {
+    public int action(Champion Talon) {
         damage = 0;
         System.out.println("System : Talon E - 암살자의 길 : "+ damage);
         System.out.println();

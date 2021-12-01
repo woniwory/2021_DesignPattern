@@ -1,11 +1,9 @@
 public class KaylePassiveStrategy implements PassiveStrategy{
-    Kayle kayle;
-    int damage;
-    public KaylePassiveStrategy(Kayle kayle){
-        this.kayle = kayle;
-    }
+    Champion kayle;
+    int damage = 0;
+
     @Override
-    public int action() {
-        return 0;
+    public int action(Champion kayle) {
+        return damage;
     }
 }

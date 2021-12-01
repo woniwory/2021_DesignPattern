@@ -1,4 +1,4 @@
 public interface QStrategy {
-    int action();
+    int action(Champion champion);
 }
 

@@ -9,6 +9,127 @@ public class Sylas extends Champion {
     int AD = 112;
     int AP = 112;
     int SylasPassiveStack = 0;
+    int Estatus = 0;
+    int Rstatus = 0;
+
+
+    public Sylas(PassiveStrategy PassiveStrategy, QStrategy QStrategy, WStrategy WStrategy, EStrategy EStrategy, RStrategy RStrategy) {
+        super(PassiveStrategy, QStrategy, WStrategy, EStrategy, RStrategy);
+    }
+
+    public int Passive(){
+        if (this.getSylasPassiveStack() <= 0) {
+            this.SylasPassiveStack = 0;
+            return this.getAD();
+
+        } else if (this.getSylasPassiveStack() <= 3){
+            int damage = super.Passive();
+            this.SylasPassiveStack --;
+            return damage;
+        }  else {
+            this.SylasPassiveStack = 3;
+            this.SylasPassiveStack -= 1;
+            int damage = super.Passive();
+            return damage;
+        }
+
+    }
+
+    public int Q() {
+        if (this.getMana() < 55) {
+            System.out.println("System : 마나가 부족합니다");
+            return 0;
+        } else {
+            int damage = super.Q();
+            this.Mana -= 55;
+            this.SylasPassiveStack++;
+            return damage;
+        }
+    }
+
+    public int W() {
+
+        if (this.getMana() < 100) {
+            System.out.println("System : 마나가 부족합니다");
+            return 0;
+
+        } else {
+            int damage = super.W();
+            this.Mana -= 100;
+            this.SylasPassiveStack++;
+            int heal = (int) (125 + this.getAP() * 0.4);
+
+            if (heal + this.getHP() >= this.getMax_HP()) {
+                this.HP = this.Max_HP;
+
+                System.out.println("Sylas W - 국왕시해자 : " + "현재 최대 체력으로 회복되었습니다");
+            } else {
+                this.HP = this.getHP() + heal;
+                System.out.println("Sylas W - 국왕시해자 : " + "당신의 체력은 " + heal + "만큼 회복되었습니다");
+            }
+
+            return damage;
+        }
+    }
+
+    public int E(){
+
+        if (this.Mana < 65){
+            System.out.println("System : 마나가 부족합니다");
+            return 0;
+        }
+
+        else {
+
+            if (Estatus == 0) {
+
+                int damage = super.E();
+                this.Mana -= 65;
+                this.SylasPassiveStack++;
+                Estatus++;
+                return damage;
+
+        } else if (Estatus == 1) {
+
+                int damage = super.E();
+                System.out.println("System : Sylas E - 억압 : " + damage);
+                System.out.println();
+                this.SylasPassiveStack++;
+                Estatus = 0;
+                return damage;
+
+            }
+            return 0;
+        }
+    }
+
+    public int R(){
+        if (this.getMana() < 75){
+            System.out.println("System : 마나가 부족합니다");
+            return 0;
+        }
+        else {
+            if (Rstatus == 0) {
+                int damage = super.R();
+                this.Mana -= 75;
+                this.SylasPassiveStack++;
+                Rstatus++;
+                return damage;
+
+            } else if (Rstatus == 1) {
+
+                int damage = super.R();
+                this.SylasPassiveStack++;
+                Rstatus = 0;
+                return damage;
+
+            }
+            return 0;
+        }
+
+
+    }
+
 
     @Override
     public String toString(){ return ("당신의 Champion은 "+ getName()+"입니다 - Lv : "+getLv()); }

@@ -1,11 +1,8 @@
 public class KayleEStrategy implements EStrategy{
-    Kayle kayle;
+    Champion kayle;
     int damage;
-    public KayleEStrategy(Kayle kayle){
-        this.kayle = kayle;
-    }
     @Override
-    public int action() {
+    public int action(Champion kayle) {
         damage = (int)(150 + kayle.getAD() *0.3 + kayle.getAP() *0.5);
         System.out.println("System : Kayle E - 화염주문검 : "+ damage);
         System.out.println();

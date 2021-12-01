@@ -1,23 +1,16 @@
 public class TalonPassiveStrategy  implements PassiveStrategy{
-    Talon Talon;
 
     int damage;
-    public TalonPassiveStrategy(Talon Talon){
-        this.Talon = Talon;
-    }
-    @Override
-    public int action() {
-        if (Talon.getTalonPassiveStack() < 3) {
-            return Talon.getAD();
 
-        }  else if (Talon.getTalonPassiveStack() >= 3){
+    @Override
+    public int action(Champion Talon) {
+
             damage = (int) (Talon.getAD() * 2.0);
             System.out.println("System : Talon Passive - 검의 최후 : " + damage);
             System.out.println();
-            Talon.TalonPassiveStack = 0;
+
             return damage;
-        }
-        return 0;
+
 
     }
 

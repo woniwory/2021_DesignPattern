@@ -1,26 +1,16 @@
 public class TalonRStrategy implements RStrategy{
-    Talon Talon;
     int damage;
-    public TalonRStrategy(Talon Talon){
-        this.Talon = Talon;
-    }
+
     @Override
-    public int action() {
-        if (Talon.Mana < 100){
-            System.out.println("System : 마나가 부족합니다");
-            return 0;
-        }
-        else {
+    public int action(Champion Talon) {
+
             damage = (int) (180 + Talon.getAD() * 1.0 + 360 + Talon.getAD() * 2.0);
             System.out.println("System : Talon R - 그림자 공격 : " + damage);
             System.out.println("다음 2초동안, 당신은 은신상태입니다 ! ");
             System.out.println();
-            Talon.TalonPassiveStack++;
-            Talon.Mana -= 100;
-
             return damage;
         }
-    }
+
 
     public String toString(){
 

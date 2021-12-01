@@ -1,31 +1,15 @@
 public class SylasPassiveStrategy  implements PassiveStrategy{
-    Sylas sylas;
 
     int damage;
-    public SylasPassiveStrategy(Sylas sylas){
-        this.sylas = sylas;
-    }
-    @Override
-    public int action() {
-        if (sylas.getSylasPassiveStack() <= 0) {
-            sylas.SylasPassiveStack = 0;
-            return sylas.getAD();
 
-        } else if (sylas.getSylasPassiveStack() <= 3){
+    @Override
+    public int action(Champion sylas) {
+
             damage = (int) (sylas.getAD() * 1.3 + sylas.getAP() * 0.25);
             System.out.println("System : Sylas Passive - 패트리사이트 폭발: " + damage);
             System.out.println();
-            sylas.SylasPassiveStack -= 1;
             return damage;
-        }
-        else{
-            sylas.SylasPassiveStack = 3;
-            damage = (int) (sylas.getAD() * 1.3 + sylas.getAP() * 0.25);
-            System.out.println("System : Sylas Passive - 패트리사이트 폭발 : " + damage);
-            System.out.println();
-            sylas.SylasPassiveStack -= 1;
-            return damage;
-        }
+
 
         }
 

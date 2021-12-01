@@ -1,19 +1,10 @@
 public class KayleWStrategy implements WStrategy{
-    Kayle kayle;
+    Champion kayle;
     int heal;
 
-    public KayleWStrategy(Kayle kayle){
-        this.kayle = kayle;
-    }
     @Override
-    public int action() {
+    public int action(Champion kayle) {
 
-        if (kayle.Mana < 90){
-            System.out.println("System : 마나가 부족합니다");
-            return 0;
-
-        }
-        else {
             heal = (int) (180 + kayle.getAP() * 0.3);
             System.out.println("System : Kayle W - 천상의 축복 : " + heal);
 
@@ -26,10 +17,10 @@ public class KayleWStrategy implements WStrategy{
                 kayle.HP = kayle.HP + heal;
                 System.out.println("당신의 체력은 " + heal + "만큼 회복되었습니다");
                 System.out.println();
-                kayle.Mana -= 90;
+
 
             }
-        }
+
 
         return heal;
 

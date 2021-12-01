@@ -1,16 +1,9 @@
 public class KayleRStrategy implements RStrategy{
-    Kayle kayle;
+    Champion kayle;
     int damage;
-    public KayleRStrategy(Kayle kayle){
-        this.kayle = kayle;
-    }
         @Override
-        public int action() {
-            if (kayle.Mana < 100){
-                System.out.println("System : 마나가 부족합니다");
-                return 0;
-            }
-            else {
+        public int action(Champion kayle) {
+
                 damage = (int) (300 + kayle.getAD() * 1.0 + kayle.getAP() * 0.8);
                 System.out.println("System : Kayle R - 신성한 심판 : " + damage);
                 System.out.println("다음 2초동안, 당신은 무적입니다 ! ");
@@ -18,7 +11,7 @@ public class KayleRStrategy implements RStrategy{
 
                 return damage;
             }
-        }
+
 
         public String toString(){
 

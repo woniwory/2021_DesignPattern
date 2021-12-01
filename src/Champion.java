@@ -1,10 +1,46 @@
 public abstract class Champion {
 
+
     PassiveStrategy PassiveStrategy;
     QStrategy QStrategy;
     WStrategy WStrategy;
     EStrategy EStrategy;
     RStrategy RStrategy;
+
+    public Champion(PassiveStrategy PassiveStrategy, QStrategy QStrategy, WStrategy WStrategy, EStrategy EStrategy, RStrategy RStrategy)
+    {
+        this.PassiveStrategy = PassiveStrategy;
+        this.QStrategy = QStrategy;
+        this.WStrategy = WStrategy;
+        this.EStrategy = EStrategy;
+        this.RStrategy = RStrategy;
+
+    }
+
+    public int Passive(){
+        int damage = PassiveStrategy.action(this);
+        return damage;
+    }
+
+    public int Q(){
+        int damage = QStrategy.action(this);
+        return damage;
+    }
+
+    public int W(){
+        int damage = WStrategy.action(this);
+        return damage;
+    }
+
+    public int E(){
+        int damage = EStrategy.action(this);
+        return damage;
+    }
+
+    public int R(){
+        int damage = RStrategy.action(this);
+        return damage;
+    }
 
 
 

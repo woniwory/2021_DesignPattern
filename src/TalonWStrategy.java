@@ -1,28 +1,19 @@
 public class TalonWStrategy implements WStrategy{
-    Talon Talon;
+
     int damage;
     int heal;
 
-    public TalonWStrategy(Talon Talon){
-        this.Talon = Talon;
-    }
+
     @Override
-    public int action() {
+    public int action(Champion Talon) {
 
-        if (Talon.Mana < 75){
-            System.out.println("System : 마나가 부족합니다");
-            return 0;
-
-        }else {
             damage = (int) (80 + Talon.getAD() * 0.4 + 170 + Talon.getAD() * 0.8);
             System.out.println("System : Talon W - 갈퀴손 : " + damage);
             System.out.println();
 
-            Talon.TalonPassiveStack++;
-            Talon.Mana -= 75;
             return damage;
 
-            }
+
 
         }
     public String toString(){
