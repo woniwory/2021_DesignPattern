@@ -1,4 +1,4 @@
-public class SylasFactory implements ChampionFactory{
+public class SylasFactory implements ChampionStrategyFactory{
     String OpponentChampion;
 
     public SylasFactory(String OpponentChampion){

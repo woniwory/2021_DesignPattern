@@ -1,4 +1,4 @@
-public class KayleFactory implements ChampionFactory{
+public class KayleFactory implements ChampionStrategyFactory{
 
     public KaylePassiveStrategy createPassive() {
         return new KaylePassiveStrategy();

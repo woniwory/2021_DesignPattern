@@ -1,6 +1,6 @@
 public class AdapterFactory {
     String ChampionType;
-    FactoryofChampionFactory factoryofChampionFactory = new FactoryofChampionFactory(ChampionType);
+    ChampionFactory factoryofChampionFactory = new ChampionFactory(ChampionType);
     Sylas Sylas;
 
     public AdapterFactory(Champion champion, String ChampionType){

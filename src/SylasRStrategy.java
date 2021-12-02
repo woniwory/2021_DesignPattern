@@ -14,7 +14,7 @@ public class SylasRStrategy implements RStrategy{
             if (status == 0) {
 
                 System.out.println("System : Sylas R - 강탈");
-                FactoryofChampionFactory factoryofChampionFactory = new FactoryofChampionFactory(ChampionType);
+                ChampionFactory factoryofChampionFactory = new ChampionFactory(ChampionType);
                 Champion champion = factoryofChampionFactory.createChampion(ChampionType);
 
 

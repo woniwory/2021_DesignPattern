@@ -1,4 +1,4 @@
-public class TalonFactory implements ChampionFactory{
+public class TalonFactory implements ChampionStrategyFactory{
     public TalonPassiveStrategy createPassive() {
         return new TalonPassiveStrategy();
     }
