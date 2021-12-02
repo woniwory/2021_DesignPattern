@@ -1,8 +1,5 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.*;
@@ -16,8 +13,8 @@ public class SummonersRift {
         String ChampionType = "Sylas";
         String OpponentChampionType1 = "Talon";
 
-        ChampionFactory championFactory = new ChampionFactory(OpponentChampionType1);
-        Champion champion = championFactory.createChampion(ChampionType);
+        FactoryofChampionFactory factoryofChampionFactory = new FactoryofChampionFactory(OpponentChampionType1);
+        Champion champion = factoryofChampionFactory.createChampion(ChampionType);
         System.out.println(champion);
         System.out.println();
 

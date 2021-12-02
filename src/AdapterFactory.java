@@ -1,6 +1,6 @@
 public class AdapterFactory {
     String ChampionType;
-    ChampionFactory championFactory = new ChampionFactory(ChampionType);
+    FactoryofChampionFactory factoryofChampionFactory = new FactoryofChampionFactory(ChampionType);
     Sylas Sylas;
 
     public AdapterFactory(Champion champion, String ChampionType){
@@ -15,15 +15,12 @@ public class AdapterFactory {
         switch (type) {
 
             case "Kayle":
-
-                Champion dummyKayle = championFactory.createChampion("Kayle");
-                KayleAdapter KayleAdapter = new KayleAdapter(Sylas,dummyKayle);
+                KayleAdapter KayleAdapter = new KayleAdapter(Sylas,factoryofChampionFactory.createChampion("Kayle"));
                 return KayleAdapter;
 
 
             case "Talon":
-                Champion dummyTalon = championFactory.createChampion("Talon");
-                TalonAdapter TalonAdapter = new TalonAdapter(Sylas,dummyTalon);
+                TalonAdapter TalonAdapter = new TalonAdapter(Sylas,factoryofChampionFactory.createChampion("Talon"));
                 return TalonAdapter;
 
         }
