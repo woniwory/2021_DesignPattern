@@ -1,17 +1,18 @@
 public class Kayle extends Champion {
 
 
-    int Max_Mana = 1180;
-    int Max_HP = 2045;
-    String name = "Kayle";
-    int Lv = 18;
-    int HP = 2045;
-    int Mana = 1180;
-    int AD = 92;
-    int AP = 92;
+
 
     public Kayle(PassiveStrategy PassiveStrategy, QStrategy QStrategy, WStrategy WStrategy, EStrategy EStrategy, RStrategy RStrategy) {
         super(PassiveStrategy, QStrategy, WStrategy, EStrategy, RStrategy);
+        Max_Mana = 1180;
+        Max_HP = 2045;
+        name = "Kayle";
+        Lv = 18;
+        HP = 2045;
+        Mana = 1180;
+        AD = 92;
+        AP = 92;
     }
 
     public int Passive(){
@@ -60,7 +61,7 @@ public class Kayle extends Champion {
 
 
     @Override
-    public String toString(){ return ("당신의 Champion은 "+ getName()+"입니다 - Lv : "+getLv()); }
+    public String toString(){ return ("당신의 Champion은 "+ this.getName()+"입니다 - Lv : "+this.getLv()); }
 
     @Override
     public String getName(){ return name; }

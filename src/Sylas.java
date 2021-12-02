@@ -1,13 +1,4 @@
 public class Sylas extends Champion {
-
-    int Max_HP = 2480;
-    int Max_Mana = 1500;
-    String name = "Sylas";
-    int Lv = 18;
-    int HP = 2480;
-    int Mana = 1500;
-    int AD = 112;
-    int AP = 112;
     int SylasPassiveStack = 0;
     int Estatus = 0;
     int Rstatus = 0;
@@ -15,6 +6,15 @@ public class Sylas extends Champion {
 
     public Sylas(PassiveStrategy PassiveStrategy, QStrategy QStrategy, WStrategy WStrategy, EStrategy EStrategy, RStrategy RStrategy) {
         super(PassiveStrategy, QStrategy, WStrategy, EStrategy, RStrategy);
+        Max_HP = 2480;
+        Max_Mana = 1500;
+        name = "Sylas";
+        Lv = 18;
+        HP = 2480;
+        Mana = 1500;
+        AD = 112;
+        AP = 112;
+
     }
 
     public int Passive(){
@@ -132,7 +132,7 @@ public class Sylas extends Champion {
 
 
     @Override
-    public String toString(){ return ("당신의 Champion은 "+ getName()+"입니다 - Lv : "+getLv()); }
+    public String toString(){ return ("당신의 Champion은 "+ this.getName()+"입니다 - Lv : "+this.getLv()); }
 
     @Override
     public String getName(){ return name; }

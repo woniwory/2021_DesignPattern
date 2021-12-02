@@ -10,21 +10,22 @@ public class AdapterFactory {
     }
 
     public Adapter createAdapter (String type) {
-
-
+        Adapter tmp = null;
         switch (type) {
 
             case "Kayle":
                 KayleAdapter KayleAdapter = new KayleAdapter(Sylas,factoryofChampionFactory.createChampion("Kayle"));
-                return KayleAdapter;
+                tmp = KayleAdapter;
+                break;
 
 
             case "Talon":
                 TalonAdapter TalonAdapter = new TalonAdapter(Sylas,factoryofChampionFactory.createChampion("Talon"));
-                return TalonAdapter;
+                tmp = TalonAdapter;
+                break;
 
         }
-        return null;
+        return tmp;
     }
 }
 

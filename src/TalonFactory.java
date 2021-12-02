@@ -1,4 +1,4 @@
-public class TalonFactory implements ChampionStrategyFactory{
+public class TalonFactory extends FactoryofChampionFactory{
     public TalonPassiveStrategy createPassive() {
         return new TalonPassiveStrategy();
     }
@@ -19,6 +19,8 @@ public class TalonFactory implements ChampionStrategyFactory{
         return new TalonRStrategy();
     }
 
-//return new Kayle(KaylePassive,KayleQ,KayleW,KayleE,KayleR);
+    public Talon createChampion(){
+        return new Talon(this.createPassive(),this.createQ(), this.createW(),this.createE(),this.createR());
+    }
 }
 

@@ -2,18 +2,19 @@ public class Talon extends Champion {
 
     int TalonPassiveStack = 0;
 
-    int Max_HP = 2203;
-    int Max_Mana = 1006;
-    String name = "Talon";
-    int Lv = 18;
-    int HP = 2203;
-    int Mana = 1006;
-    int AD = 140;
-    int AP = 0;
 
 
     public Talon(PassiveStrategy PassiveStrategy, QStrategy QStrategy, WStrategy WStrategy, EStrategy EStrategy, RStrategy RStrategy) {
         super(PassiveStrategy, QStrategy, WStrategy, EStrategy, RStrategy);
+
+        Max_HP = 2203;
+        Max_Mana = 1006;
+        name = "Talon";
+        Lv = 18;
+        HP = 2203;
+        Mana = 1006;
+        AD = 140;
+        AP = 0;
     }
 
     public int Passive(){
@@ -71,7 +72,7 @@ public class Talon extends Champion {
     }
 
     @Override
-    public String toString(){ return ("당신의 Champion은 "+ getName()+"입니다 - Lv : "+getLv()); }
+    public String toString(){ return ("당신의 Champion은 "+ this.getName()+"입니다 - Lv : "+this.getLv()); }
 
     @Override
     public String getName(){ return name; }

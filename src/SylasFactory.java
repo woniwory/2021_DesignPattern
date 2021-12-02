@@ -1,4 +1,4 @@
-public class SylasFactory implements ChampionStrategyFactory{
+public class SylasFactory extends FactoryofChampionFactory{
     String OpponentChampion;
 
     public SylasFactory(String OpponentChampion){
@@ -25,6 +25,8 @@ public class SylasFactory implements ChampionStrategyFactory{
         return new SylasRStrategy(OpponentChampion);
     }
 
-//return new Kayle(KaylePassive,KayleQ,KayleW,KayleE,KayleR);
+    public Sylas createChampion(){
+        return new Sylas(this.createPassive(),this.createQ(), this.createW(),this.createE(),this.createR());
+    }
 }
 
