@@ -18,16 +18,12 @@ public class ChampionFactory {
                 tmp = Kayle;
                 break;
 
-
-
             case "Sylas":
 
                 FactoryofChampionFactory SylasFactory = new SylasFactory(OpponentChampion);
                 Champion Sylas = SylasFactory.createChampion();
                 tmp = Sylas;
                 break;
-
-
 
             case "Talon":
 
@@ -37,7 +33,6 @@ public class ChampionFactory {
                 break;
 
         }
-
         return tmp;
     }
 }

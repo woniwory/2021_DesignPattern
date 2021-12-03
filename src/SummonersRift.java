@@ -5,7 +5,7 @@ import java.awt.event.KeyListener;
 import javax.swing.*;
 
 
-public class SummonersRift {
+public class SummonersRift{
     private static int damage = 0;
     public static void  main(String args[]){
 
@@ -221,22 +221,11 @@ public class SummonersRift {
             }
         }
 
-        class ButtonListener implements ActionListener {
-            Champion champion;
-            public ButtonListener(Champion champion){
-                this.champion = champion;
-            }
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-
-
-            }
-
-        }
         fr.setVisible(true);
         fr.addKeyListener(new key(champion,ChampionType));
+
+
 
 
 
