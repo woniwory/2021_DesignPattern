@@ -17,54 +17,59 @@ public class Talon extends Champion {
         AP = 0;
     }
 
+    @Override
     public int Passive(){
         if (this.getTalonPassiveStack() < 3) {
             return this.getAD();
 
         }  else if (this.getTalonPassiveStack() >= 3) {
-            int damage = super.Passive();
+            int damage = PassiveStrategy.action(this);
             this.TalonPassiveStack = 0;
             return damage;
         }
         return 0;
     }
 
+    @Override
     public int Q() {
         if (this.getMana() < 40) {
             System.out.println("System : 마나가 부족합니다");
             return 0;
         } else {
-            int damage = super.Q();
+            int damage = QStrategy.action(this);
             this.Mana -= 40;
             TalonPassiveStack++;
             return damage;
         }
     }
 
+    @Override
     public int W() {
         if (this.getMana() < 75) {
             System.out.println("System : 마나가 부족합니다");
             return 0;
         } else {
-            int damage = super.W();
+            int damage = WStrategy.action(this);
             this.Mana -= 75;
             TalonPassiveStack += 2;
             return damage;
         }
     }
 
+    @Override
     public int E(){
-        int damage = super.E();
+        int damage = EStrategy.action(this);
         return damage;
     }
 
+    @Override
     public int R(){
         if (this.getMana() < 100){
             System.out.println("System : 마나가 부족합니다");
             return 0;
         }
         else {
-            int damage = super.R();
+            int damage = RStrategy.action(this);
             this.Mana -= 100;
             TalonPassiveStack++;
             return damage;

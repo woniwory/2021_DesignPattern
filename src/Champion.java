@@ -17,32 +17,15 @@ public abstract class Champion {
 
     }
 
-    public int Passive(){
-        int damage = PassiveStrategy.action(this);
-        return damage;
-    }
+    public abstract int Passive();
 
-    public int Q(){
-        int damage = QStrategy.action(this);
-        return damage;
-    }
+    public abstract int Q();
 
-    public int W(){
-        int damage = WStrategy.action(this);
-        return damage;
-    }
+    public abstract int W();
 
-    public int E(){
-        int damage = EStrategy.action(this);
-        return damage;
-    }
+    public abstract int E();
 
-    public int R(){
-        int damage = RStrategy.action(this);
-        return damage;
-    }
-
-
+    public abstract int R();
 
 
     int Max_HP;

@@ -17,36 +17,39 @@ public class Sylas extends Champion {
 
     }
 
+    @Override
     public int Passive(){
         if (this.getSylasPassiveStack() <= 0) {
             this.SylasPassiveStack = 0;
             return this.getAD();
 
         } else if (this.getSylasPassiveStack() <= 3){
-            int damage = super.Passive();
+            int damage = PassiveStrategy.action(this);
             this.SylasPassiveStack --;
             return damage;
         }  else {
             this.SylasPassiveStack = 3;
             this.SylasPassiveStack -= 1;
-            int damage = super.Passive();
+            int damage = PassiveStrategy.action(this);
             return damage;
         }
 
     }
 
+    @Override
     public int Q() {
         if (this.getMana() < 55) {
             System.out.println("System : 마나가 부족합니다");
             return 0;
         } else {
-            int damage = super.Q();
+            int damage = QStrategy.action(this);
             this.Mana -= 55;
             this.SylasPassiveStack++;
             return damage;
         }
     }
 
+    @Override
     public int W() {
 
         if (this.getMana() < 100) {
@@ -54,7 +57,7 @@ public class Sylas extends Champion {
             return 0;
 
         } else {
-            int damage = super.W();
+            int damage = WStrategy.action(this);
             this.Mana -= 100;
             this.SylasPassiveStack++;
             int heal = (int) (125 + this.getAP() * 0.4);
@@ -72,6 +75,7 @@ public class Sylas extends Champion {
         }
     }
 
+    @Override
     public int E(){
 
         if (this.Mana < 65){
@@ -83,7 +87,7 @@ public class Sylas extends Champion {
 
             if (Estatus == 0) {
 
-                int damage = super.E();
+                int damage = EStrategy.action(this);
                 this.Mana -= 65;
                 this.SylasPassiveStack++;
                 Estatus++;
@@ -91,7 +95,7 @@ public class Sylas extends Champion {
 
         } else if (Estatus == 1) {
 
-                int damage = super.E();
+                int damage = EStrategy.action(this);
                 System.out.println("System : Sylas E - 억압 : " + damage);
                 System.out.println();
                 this.SylasPassiveStack++;
@@ -103,6 +107,7 @@ public class Sylas extends Champion {
         }
     }
 
+    @Override
     public int R(){
         if (this.getMana() < 75){
             System.out.println("System : 마나가 부족합니다");
@@ -110,7 +115,7 @@ public class Sylas extends Champion {
         }
         else {
             if (Rstatus == 0) {
-                int damage = super.R();
+                int damage = RStrategy.action(this);
                 this.Mana -= 75;
                 this.SylasPassiveStack++;
                 Rstatus++;
@@ -118,7 +123,7 @@ public class Sylas extends Champion {
 
             } else if (Rstatus == 1) {
 
-                int damage = super.R();
+                int damage = RStrategy.action(this);;
                 this.SylasPassiveStack++;
                 Rstatus = 0;
                 return damage;

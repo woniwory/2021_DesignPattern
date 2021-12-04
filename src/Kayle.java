@@ -1,8 +1,5 @@
 public class Kayle extends Champion {
 
-
-
-
     public Kayle(PassiveStrategy PassiveStrategy, QStrategy QStrategy, WStrategy WStrategy, EStrategy EStrategy, RStrategy RStrategy) {
         super(PassiveStrategy, QStrategy, WStrategy, EStrategy, RStrategy);
         Max_Mana = 1180;
@@ -15,45 +12,50 @@ public class Kayle extends Champion {
         AP = 92;
     }
 
+    @Override
     public int Passive(){
-        int damage = super.Passive();
+        int damage = PassiveStrategy.action(this);
         return damage;
     }
 
+    @Override
     public int Q() {
         if (this.getMana() < 70) {
             System.out.println("System : 마나가 부족합니다");
             return 0;
         } else {
-            int damage = super.Q();
+            int damage = QStrategy.action(this);
             this.Mana -= 70;
             return damage;
         }
     }
 
+    @Override
     public int W() {
         if (this.getMana() < 90) {
             System.out.println("System : 마나가 부족합니다");
             return 0;
         } else {
-            int damage = super.W();
+            int damage = WStrategy.action(this);
             this.Mana -= 90;
             return damage;
         }
     }
 
+    @Override
     public int E(){
-        int damage = super.E();
+        int damage = EStrategy.action(this);
         return damage;
     }
 
+    @Override
     public int R(){
         if (this.getMana() < 100){
             System.out.println("System : 마나가 부족합니다");
             return 0;
         }
         else {
-            int damage = super.R();
+            int damage = RStrategy.action(this);
             this.Mana -= 100;
             return damage;
         }
