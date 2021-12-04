@@ -1,5 +1,5 @@
 public class KayleQStrategy implements QStrategy{
-    Champion kayle;
+
     int damage = 0;
 
     @Override

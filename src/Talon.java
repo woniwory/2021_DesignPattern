@@ -4,7 +4,8 @@ public class Talon extends Champion {
 
 
 
-    public Talon(PassiveStrategy PassiveStrategy, QStrategy QStrategy, WStrategy WStrategy, EStrategy EStrategy, RStrategy RStrategy) {
+    public Talon(PassiveStrategy PassiveStrategy, QStrategy QStrategy, WStrategy WStrategy,
+                 EStrategy EStrategy, RStrategy RStrategy) {
         super(PassiveStrategy, QStrategy, WStrategy, EStrategy, RStrategy);
 
         Max_HP = 2203;
@@ -12,7 +13,7 @@ public class Talon extends Champion {
         name = "Talon";
         Lv = 18;
         HP = 2203;
-        Mana = 1006;
+        Mana = 0;
         AD = 140;
         AP = 0;
     }

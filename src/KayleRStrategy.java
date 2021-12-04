@@ -1,5 +1,5 @@
 public class KayleRStrategy implements RStrategy{
-    Champion kayle;
+
     int damage;
         @Override
         public int action(Champion kayle) {

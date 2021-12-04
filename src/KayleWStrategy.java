@@ -1,5 +1,5 @@
 public class KayleWStrategy implements WStrategy{
-    Champion kayle;
+
     int heal;
 
     @Override
