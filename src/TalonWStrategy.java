@@ -1,6 +1,6 @@
 public class TalonWStrategy implements WStrategy{
 
-    int damage;
+    int damage = 0;
 
 
     @Override

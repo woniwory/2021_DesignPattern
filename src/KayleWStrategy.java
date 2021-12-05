@@ -1,6 +1,6 @@
 public class KayleWStrategy implements WStrategy{
 
-    int heal;
+    int heal = 0;
 
     @Override
     public int action(Champion kayle) {

@@ -1,5 +1,5 @@
 public class TalonRStrategy implements RStrategy{
-    int damage;
+    int damage = 0;
 
     @Override
     public int action(Champion Talon) {

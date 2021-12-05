@@ -1,6 +1,6 @@
 public class SylasEStrategy implements EStrategy {
 
-    int damage;
+    int damage = 0;
     int status = 0;
 
     @Override

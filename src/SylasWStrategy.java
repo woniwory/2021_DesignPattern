@@ -1,6 +1,6 @@
 public class SylasWStrategy implements WStrategy{
 
-    int damage;
+    int damage = 0;
 
 
     @Override

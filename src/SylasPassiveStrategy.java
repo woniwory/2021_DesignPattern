@@ -1,6 +1,6 @@
 public class SylasPassiveStrategy  implements PassiveStrategy{
 
-    int damage;
+    int damage = 0;
 
     @Override
     public int action(Champion sylas) {
