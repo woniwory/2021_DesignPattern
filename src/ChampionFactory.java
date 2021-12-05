@@ -7,8 +7,6 @@ public class ChampionFactory {
 
     public Champion createChampion(String type) {
         Champion tmp = null;
-
-
         switch (type) {
 
             case "Kayle":

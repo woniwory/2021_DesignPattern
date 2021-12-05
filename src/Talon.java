@@ -13,7 +13,7 @@ public class Talon extends Champion {
         name = "Talon";
         Lv = 18;
         HP = 2203;
-        Mana = 0;
+        Mana = 1006;
         AD = 140;
         AP = 0;
     }
