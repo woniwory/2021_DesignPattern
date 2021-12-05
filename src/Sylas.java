@@ -96,8 +96,6 @@ public class Sylas extends Champion {
         } else if (Estatus == 1) {
 
                 int damage = EStrategy.action(this);
-                System.out.println("System : Sylas E - 억압 : " + damage);
-                System.out.println();
                 this.SylasPassiveStack++;
                 Estatus = 0;
                 return damage;

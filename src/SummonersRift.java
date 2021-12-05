@@ -10,7 +10,7 @@ public class SummonersRift{
     public static void  main(String args[]){
 
 
-        String ChampionType = "Sylas";
+        String ChampionType = "Kayle";
         String OpponentChampionType1 = "Talon";
 
         ChampionFactory factoryofChampionFactory = new ChampionFactory(OpponentChampionType1);
